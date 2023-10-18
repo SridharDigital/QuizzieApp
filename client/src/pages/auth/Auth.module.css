@@ -1,0 +1,126 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F2F2;
+    min-height: 100vh;
+}
+
+.authContentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 24px 48px;
+    min-width: 80%;
+    min-height: 570px;
+}
+
+.logo {
+    color: #474444;
+    font-family: 'Jomhuria', serif;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 0px 24px 0px;
+}
+
+.authBtn {
+    color: #474444;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 217px;
+    height: 37px;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btnActive {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 50px 0px rgba(0, 25, 255, 0.24);
+}
+
+.SignupFormContainer {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.loginFormContainer {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.formFieldContainer {
+    margin-top: 24px;
+}
+
+.formLabel {
+    color: #474444;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 32px;
+    text-align: right;
+}
+
+.inputBar {
+    width: 388px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px 10px 0px 0px;
+    background: #F4F4F4;
+    border: none;
+    padding: 0px 12px;
+    outline: none;
+}
+
+.inputBar::placeholder {
+    color: #D60000;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.inputError {
+    border: 1px solid #D60000;
+}
+
+.submitBtnContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.submitBtn {
+    width: 274px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #A9BCFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #474444;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
