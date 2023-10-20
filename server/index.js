@@ -129,6 +129,10 @@ app.post("/api/login", async (req, res) => {
   }
 })
 
+app.get("/test", (req, res) => {
+  res.send("The server is working")
+})
+
 app.listen(process.env.PORT, async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL)
