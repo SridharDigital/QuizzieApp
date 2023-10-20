@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import style from "./Auth.module.css"
 
+import { callApi } from "../../utils/callApi"
+
 const initialAdminValues = {
   name: "",
   email: "",
@@ -43,17 +45,17 @@ const Signup = () => {
     setErrors({})
     const isFormValid = validateFormData()
 
-    // if (isFormValid) {
-    //   const apiResponse = await sendRequest("POST", "/register", user)
-    //   setAdmin(initialAdminValues)
-
-    //   if (apiResponse.status === "FAILURE") {
-    //     setErrors({ apiError: apiResponse.message })
-    //   } else {
-    //     dispatch(loginUser(apiResponse.data))
-    //     redirectToDashboard()
-    //   }
-    // }
+    if (isFormValid) {
+      const response = await callApi("POST", "/signup", admin)
+      console.log(response)
+      setAdmin(initialAdminValues)
+      // if (response.status === "FAIL") {
+      //   setErrors({ apiError: response.message })
+      // } else {
+      //   dispatch(loginUser(response.data))
+      //   navigate("/")
+      // }
+    }
   }
 
   const validateFormData = () => {

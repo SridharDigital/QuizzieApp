@@ -124,3 +124,9 @@
     font-weight: 600;
     line-height: normal;
 }
+
+.apiAuthError {
+    color: red;
+    width: 100%;
+    text-align: center;
+}

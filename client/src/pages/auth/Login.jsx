@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import style from "./Auth.module.css"
 
+import { callApi } from "../../utils/callApi"
+
 const initialAdminValues = {
   email: "",
   password: "",
@@ -41,17 +43,18 @@ const Login = () => {
     setErrors({})
     const isFormValid = validateFormData()
 
-    // if (isFormValid) {
-    //   const apiResponse = await sendRequest("POST", "/register", user)
-    //   setAdmin(initialAdminValues)
-
-    //   if (apiResponse.status === "FAILURE") {
-    //     setErrors({ apiError: apiResponse.message })
-    //   } else {
-    //     dispatch(loginUser(apiResponse.data))
-    //     redirectToDashboard()
-    //   }
-    // }
+    if (isFormValid) {
+      const response = await callApi("POST", "/login", admin)
+      console.log(response)
+      setAdmin(initialAdminValues)
+      if (response.status === "FAIL") {
+        setErrors({ apiError: response.message })
+      }
+      //   } else {
+      //     dispatch(loginUser(response.data))
+      //     navigate("/")
+      //   }
+    }
   }
 
   const validateFormData = () => {
@@ -105,6 +108,9 @@ const Login = () => {
           onInput={handleInput}
           onBlur={handleBlur}
         />
+        {errors.apiError ? (
+          <p className={style.apiAuthError}>{errors.apiError}</p>
+        ) : null}
       </div>
       <div className={style.submitBtnContainer}>
         <button type="submit" className={style.submitBtn}>
