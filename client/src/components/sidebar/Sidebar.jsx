@@ -1,7 +1,15 @@
 import style from "./Sidebar.module.css"
 
+import { useDispatch } from "react-redux"
+import { openCreateQuizPopup } from "../../store/quizSlice"
+
 const Sidebar = () => {
   const isActive = true
+  const dispatch = useDispatch()
+
+  const onClickCreateQuiz = () => {
+    dispatch(openCreateQuizPopup())
+  }
   return (
     <div className={style.sidebarContainer}>
       <h1 className={style.logo}>Quizzie</h1>
