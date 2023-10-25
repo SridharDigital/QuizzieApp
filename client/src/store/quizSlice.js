@@ -17,6 +17,6 @@ export const quizSlice = createSlice({
   },
 })
 
-export const { openCreateQuizPopup, closeCreateQuizPopup } = adminSlice.actions
+export const { openCreateQuizPopup, closeCreateQuizPopup } = quizSlice.actions
 
 export default quizSlice.reducer
